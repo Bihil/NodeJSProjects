@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/Bihil/NodeJSProjects/issues"
   },
-  "homepage": "https://github.com/Bihil/NodeJSProjects#readme"
+  "homepage": "https://github.com/Bihil/NodeJSProjects#readme",
+  "dependencies": {
+    "body-parser": "*",
+    "express": "*",
+    "jade": "*",
+    "nodemailer": "*"
+  }
 }
