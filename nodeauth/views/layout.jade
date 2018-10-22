@@ -1,0 +1,36 @@
+doctype html
+html(lang='en')
+  head
+    title Welcome
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(href='/stylesheets/bootstrap.min.css', rel='stylesheet')
+    link(href='/stylesheets/style.css', rel='stylesheet')
+    
+  body
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light.rounded
+      .container
+        a.navbar-brand(href='#') NodeAuth
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#collapsibleNavbar')
+          span.navbar-toggler-icon
+        #collapsibleNavbar.collapse.navbar-collapse
+          ul.navbar-nav
+            if user
+              li.nav-item(class=(title == 'Memebers' ? 'active' : ''))
+                a.nav-link(href='/') Members
+            if !user
+              li.nav-item(class=(title == 'Register' ? 'active' : ''))
+                a.nav-link(href='/users/register') Register
+              li.nav-item(class=(title == 'Login' ? 'active' : ''))
+                a.nav-link(href='/users/login') Login
+          ul.nav.navbar-nav.ml-auto
+            if user
+              li
+                a.nav-link(href='/users/logout') Logout
+    br
+    .container
+      != messages()
+      block content
+  script(src='/javascripts/jquery.min.js')
+  script(src='/javascripts/popper.min.js')
+  script(src='/javascripts/bootstrap.min.js')
